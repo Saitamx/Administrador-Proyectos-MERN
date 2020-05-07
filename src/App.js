@@ -5,18 +5,34 @@ import NuevaCuenta from "./components/auth/NuevaCuenta";
 import Proyectos from "./components/proyectos/Proyectos";
 import ProyectoState from "./context/proyectos/proyectoState";
 import TareaState from "./context/tareas/tareaState";
+import AlertaState from "./context/alertas/alertaState";
+import AuthState from "./context/atenticacion/authState";
+import tokenAuth from "./config/token";
+import Rutaprivada from "./components/rutas/Rutaprivada";
+
+// revisar si tenemos un token
+const token = localStorage.getItem('token');
+if(token){
+  tokenAuth(token);
+}
 
 function App() {
+
+  console.log(process.env.REACT_APP_BACKEND_URL);
   return (
     <ProyectoState>
       <TareaState>
-        <Router>
-          <Switch>
-            <Route exact path="/" component={Login} />
-            <Route exact path="/nueva-cuenta" component={NuevaCuenta} />
-            <Route exact path="/proyectos" component={Proyectos} />
-          </Switch>
-        </Router>
+        <AlertaState>
+          <AuthState>
+            <Router>
+              <Switch>
+                <Route exact path="/" component={Login} />
+                <Route exact path="/nueva-cuenta" component={NuevaCuenta} />
+                <Rutaprivada exact path="/proyectos" component={Proyectos} />
+              </Switch>
+            </Router>
+          </AuthState>
+        </AlertaState>
       </TareaState>
     </ProyectoState>
   );
