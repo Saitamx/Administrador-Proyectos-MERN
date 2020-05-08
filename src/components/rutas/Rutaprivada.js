@@ -4,6 +4,7 @@ import AuthContext from "../../context/atenticacion/authContext";
 
 // codigo para proteger componentes, reutilizable en cualquier proyecto
 const Rutaprivada = ({ component: Component, ...props }) => {
+  
   const authContext = useContext(AuthContext);
   const { autenticado, cargando, usuarioAutenticado } = authContext;
 

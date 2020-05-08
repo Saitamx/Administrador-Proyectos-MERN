@@ -2,10 +2,10 @@ import {
     FORMULARIO_PROYECTO,
     OBTENER_PROYECTOS,
     AGREGAR_PROYECTO,
+    PROYECTO_ERROR,
     VALIDAR_FORMULARIO,
     PROYECTO_ACTUAL,
     ELIMINAR_PROYECTO,
-    PROYECTO_ERROR,
   } from "../../types";
 
 export default (state, action) => {

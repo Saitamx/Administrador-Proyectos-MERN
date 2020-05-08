@@ -18,10 +18,9 @@ const ListadoProyectos = () => {
         if(mensaje) {
             mostrarAlerta(mensaje.msg, mensaje.categoria);
         }
-
         obtenerProyectos();
         // eslint-disable-next-line
-    },[mensaje ]);
+    },[mensaje]);
 
     // revisar si proyectos tiene contenido
     if(proyectos.length === 0) return <p>No hay proyectos, comienza creando uno</p>;
@@ -32,7 +31,7 @@ const ListadoProyectos = () => {
             <TransitionGroup>
             {proyectos.map(proyecto => (
                 <CSSTransition
-                    key={proyecto._id}
+                    key={proyecto._id} 
                     timeout={200}
                     classNames="proyecto"
                 >

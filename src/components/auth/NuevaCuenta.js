@@ -71,7 +71,7 @@ const NuevaCuenta = (props) => {
       nombre,
       email,
       password
-    })
+    });
     
   };
 

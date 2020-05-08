@@ -19,28 +19,29 @@ import {
         dispatch({
             type: MOSTRAR_ALERTA,
             payload: {
-                msg,
+                msg, // ojo puede ser msg : msg,
                 categoria
             }
         });
 
+        //  despues de un tiempo determinado, limpiar la alerta de error
         setTimeout(() => {
             dispatch({
                 type: OCULTAR_ALERTA
             })
-        }, 5000);
+        }, 7000);
     }
 
-      return (
-    <alertaContext.Provider
-        value={{
-            alerta : state.alerta,
-            mostrarAlerta
-        }}
-    >
-        {props.children}
-    </alertaContext.Provider>
-    )
+    return (
+        <alertaContext.Provider
+            value={{
+                alerta : state.alerta,
+                mostrarAlerta
+            }}
+        >
+            {props.children}
+        </alertaContext.Provider>
+        )
   }
 
   export default AlertaState;

@@ -11,8 +11,6 @@ const Barra = () => {
      usuarioAutenticado();
    }, []);
 
-
-
   return (
     <header className="app-header">
       {usuario ? <p className="nombre-usuario">Hola
